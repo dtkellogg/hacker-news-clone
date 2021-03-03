@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ThemeProvider } from "./contexts/theme";
+import Nav from "./components/Nav";
+import Loading from "./components/Loading";
+
+const Posts = React.lazy(() => import("./components/Posts"));
+const Post = React.lazy(() => import("./components/Post"));
+const User = React.lazy(() => import("./components/User"));
 
 function App() {
+  const [theme, setTheme] = React.useState("light");
+
+  const toggleTheme = () =>
+    setTheme((theme) => (theme === "light" ? "dark" : "light"));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <ThemeProvider value={theme}>
+          <div className={theme}>
+            <div className="container">
+              <Nav toggleTheme={toggleTheme} />
+
+              <React.Suspense fallback={<Loading />}>
+                <Switch>
+                  <Route exact path="/" render={() => <Posts type="top" />} />
+                  <Route path="/new" render={() => <Posts type="new" />} />
+                  <Route path="/post" component={Post} />
+                  <Route path="/user" component={User} />
+                  <Route render={() => <h1>404</h1>} />
+                </Switch>
+              </React.Suspense>
+            </div>
+          </div>
+        </ThemeProvider>
+      </Router>
     </div>
   );
 }

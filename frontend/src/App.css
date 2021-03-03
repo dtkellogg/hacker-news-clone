@@ -1,38 +1,81 @@
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  /* background-color: green; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* FONT */
+
+.font-md {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* BUTTONS */
+
+.btn-clear {
+  background: transparent;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Themes */
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* NAVBAR */
+
+ul {
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.nav-links {
+  padding: 2rem;
+  margin: 2rem;
+  display: flex;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-theme-icon {
+  /* padding: 2rem; */
+  font-size: 2rem;
+}
+
+/* MAIN */
+.container {
+  margin: 0 auto;
+  padding: 5rem;
+  width: 80%;
+  /* background-color: blue; */
+}
+
+/* New */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-around {
+  justify-content: space-around;
 }
