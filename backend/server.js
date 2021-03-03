@@ -1,30 +1,9 @@
-const path = require("path");
-const express = require("express");
-const app = express();
-const publicPath = path.join(__dirname, "..", "public");
-const port = process.env.PORT || 3000;
-
-app.use(express.static(publicPath));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
-});
-
-app.listen(port, () => {
-  console.log("Server is up!");
-});
-
-
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
-const enforce = require("express-sslify");
-const https = require("https");
-const colors = require("colors");
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser");
-const multer = require("multer")
 
 
 dotenv.config();
