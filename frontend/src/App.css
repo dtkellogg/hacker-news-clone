@@ -44,8 +44,8 @@ ul {
 }
 
 .nav-links {
-  padding: 2rem;
-  margin: 2rem;
+  /* padding: 2rem; */
+  margin: 2rem 0;
   display: flex;
 }
 
@@ -68,6 +68,8 @@ ul {
   padding: 5rem;
   width: 80%;
   position: relative;
+  height: 100%;
+  /* width: 100%; */
   /* background-color: blue; */
 }
 
@@ -79,4 +81,16 @@ ul {
 
 .space-around {
   justify-content: space-around;
+}
+
+.post {
+  margin-bottom: 0.5rem;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 3rem;
+  }
 }

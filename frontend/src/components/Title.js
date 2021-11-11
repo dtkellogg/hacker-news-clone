@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Title({ url, title, id }) {
-  return url ? <a href={url}>{title}</a> : <Link to={url}>{title}</Link>;
+  return url ? <a href={url} style={{fontSize: "1.3rem"}}>{title}</a> : <Link to={url}>{title}</Link>;
 }
 
 Title.propTypes = {
