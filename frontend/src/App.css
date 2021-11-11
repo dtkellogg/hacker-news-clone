@@ -67,6 +67,7 @@ ul {
   margin: 0 auto;
   padding: 5rem;
   width: 80%;
+  position: relative;
   /* background-color: blue; */
 }
 

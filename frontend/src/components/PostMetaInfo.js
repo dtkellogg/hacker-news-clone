@@ -14,7 +14,7 @@ export default function PostMetaInfo({ by, time, id, descendants }) {
       </span>
       <span>on {formatDate(time)}</span>
       {typeof descendants === "number" && (
-        <span>
+        <span style={{marginLeft: "0.25rem"}}>
           with <Link to={`/post?id=${id}`}>{descendants}</Link> comments
         </span>
       )}
